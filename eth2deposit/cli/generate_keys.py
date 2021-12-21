@@ -23,7 +23,7 @@ from eth2deposit.utils.constants import (
 from eth2deposit.utils.ascii_art import RHINO_0
 from eth2deposit.settings import (
     ALL_CHAINS,
-    MAINNET,
+    GNOSIS,
     get_chain_setting,
 )
 
@@ -93,8 +93,8 @@ def generate_keys_arguments_decorator(function: Callable[..., Any]) -> Callable[
         ),
         click.option(
             '--chain',
-            default=MAINNET,
-            help='The version of eth2 you are targeting. use "mainnet" if you are depositing ETH',
+            default=GNOSIS,
+            help='The version of Gnosis/xDai you are targeting. use "gnosis" if you are depositing mGNO',
             prompt='Please choose the (mainnet or testnet) network/chain name',
             type=click.Choice(ALL_CHAINS.keys(), case_sensitive=False),
         ),
